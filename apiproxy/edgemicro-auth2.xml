@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="6" name="edgemicro-auth2">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1475732965813</CreatedAt>
+    <CreatedBy>ssridhar@apigee.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>edgemicro-auth2</DisplayName>
+    <LastModifiedAt>1475732965813</LastModifiedAt>
+    <LastModifiedBy>ssridhar@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>Access-App-Info-2</Policy>
+        <Policy>Access-App-Info</Policy>
+        <Policy>Access-Product-Info</Policy>
+        <Policy>AccessTokenRequest</Policy>
+        <Policy>Create-OAuth-Request</Policy>
+        <Policy>Create-Refresh-Request</Policy>
+        <Policy>Create-Response</Policy>
+        <Policy>Extract-API-Key</Policy>
+        <Policy>Extract-OAuth-Params</Policy>
+        <Policy>Extract-Refresh-Params</Policy>
+        <Policy>Generate-JWT</Policy>
+        <Policy>Generate-Verify-JWT</Policy>
+        <Policy>Get-Private-Key</Policy>
+        <Policy>Get-Public-Key</Policy>
+        <Policy>JavaCallout</Policy>
+        <Policy>ProductScopes-to-JSON</Policy>
+        <Policy>Products-to-JSON-2</Policy>
+        <Policy>Products-to-JSON</Policy>
+        <Policy>Raise-Fault-Unknown-Request</Policy>
+        <Policy>RefreshAccessToken</Policy>
+        <Policy>Verify-API-Key</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://generate-jwt.js</Resource>
+        <Resource>jsc://generate-verify-jwt.js</Resource>
+        <Resource>jsc://jsrsasign-latest-all-min.js</Resource>
+        <Resource>jsc://jws-initialization-1.0.js</Resource>
+        <Resource>java://micro-gateway-products-javacallout-1.0.0.jar</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>
