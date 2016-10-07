@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<XMLToJSON async="false" continueOnError="false" enabled="true" name="ProductScopes-to-JSON">
-    <DisplayName>Product Scopes to JSON</DisplayName>
-    <Properties/>
-    <Format>yahoo</Format>
-    <OutputVariable>productScopes</OutputVariable>
-    <Source>AccessEntity.Access-Product-Info.ApiProduct.Scopes</Source>
-</XMLToJSON>

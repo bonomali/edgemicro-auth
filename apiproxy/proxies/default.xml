@@ -76,12 +76,6 @@
                     <Name>Products-to-JSON</Name>
                 </Step>
                 <Step>
-                    <Name>Access-Product-Info</Name>
-                </Step>
-                <Step>
-                    <Name>ProductScopes-to-JSON</Name>
-                </Step>
-                <Step>
                     <Name>AccessTokenRequest</Name>
                 </Step>
                 <Step>
@@ -108,12 +102,6 @@
                 </Step>
                 <Step>
                     <Name>Products-to-JSON</Name>
-                </Step>
-                <Step>
-                    <Name>Access-Product-Info</Name>
-                </Step>
-                <Step>
-                    <Name>ProductScopes-to-JSON</Name>
                 </Step>
                 <Step>
                     <Name>RefreshAccessToken</Name>

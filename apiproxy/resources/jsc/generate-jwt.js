@@ -46,7 +46,7 @@
     "access_token": context.getVariable("apigee.access_token"),
     "application_name": context.getVariable("AccessEntity.ChildNodes.Access-App-Info.App.AppId"),//context.getVariable("apigee.developer.app.name"),
     "client_id": context.getVariable("apigee.client_id"),
-    "scopes": productScopes,
+    "scopes": (context.getVariable("oauthv2accesstoken.AccessTokenRequest.scope")).split(" "),
     "api_product_list": apiProductsList,
     "iat": (new Date()).getTime(),
     "exp": new Date( (new Date()).getTime() + expiry).getTime(),
