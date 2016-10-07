@@ -30,8 +30,6 @@
  var grant_type = context.getVariable("grant_type");
  //JWT expiry in milliseconds
  var expiry = parseInt(context.getVariable("token_expiry")) || 300000;
- //get api product scopes
- var productScopes = JSON.parse(context.getVariable('productScopes')).Scopes.Scope || []; // array of scope names
  //get api product list
  var apiProducts = JSON.parse(context.getVariable('apiProducts')).ApiProducts.ApiProduct || [];
  
