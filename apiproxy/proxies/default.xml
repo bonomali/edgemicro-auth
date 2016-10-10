@@ -43,7 +43,13 @@
                     <Name>Get-Private-Key</Name>
                 </Step>
                 <Step>
-                    <Name>Generate-Verify-JWT</Name>
+                    <Name>Set-JWT-Variables</Name>
+                </Step>
+                <Step>
+                    <Name>JavaCalloutJWT2</Name>
+                </Step>
+                <Step>
+                    <Name>Set-Response</Name>
                 </Step>
             </Request>
             <Response/>
@@ -82,7 +88,13 @@
                     <Name>Get-Private-Key</Name>
                 </Step>
                 <Step>
-                    <Name>Generate-JWT</Name>
+                    <Name>Set-JWT-Variables</Name>
+                </Step>
+                <Step>
+                    <Name>JavaCalloutJWT</Name>
+                </Step>
+                <Step>
+                    <Name>Set-Response</Name>
                 </Step>
             </Request>
             <Response/>
@@ -110,7 +122,13 @@
                     <Name>Get-Private-Key</Name>
                 </Step>
                 <Step>
-                    <Name>Generate-JWT</Name>
+                    <Name>Set-JWT-Variables</Name>
+                </Step>
+                <Step>
+                    <Name>JavaCalloutJWT</Name>
+                </Step>
+                <Step>
+                    <Name>Set-Response</Name>
                 </Step>
             </Request>
             <Response/>

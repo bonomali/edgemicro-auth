@@ -2,6 +2,12 @@
 <ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-API-Key">
     <DisplayName>Extract API Key</DisplayName>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <Header name="X-Forwarded-Proto">
+        <Pattern ignoreCase="true">{proxyProto}</Pattern>
+    </Header>
+    <Header name="Host">
+        <Pattern ignoreCase="true">{proxyHost}</Pattern>
+    </Header>
     <JSONPayload>
         <Variable name="apikey">
             <JSONPath>$.apiKey</JSONPath>

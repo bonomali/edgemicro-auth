@@ -1,4 +1,4 @@
-/****************************************************************************
+ /****************************************************************************
  The MIT License (MIT)
 
  Copyright (c) 2016 Apigee Corporation
@@ -21,13 +21,15 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
- 
-/*
-*
-* A dummy navigator object - jsrasign expects to be running in a browser and expects 
-* these to be in the global namespace
-*
-*/
-
-var navigator = navigator || {appName : ''};
-var window = window || {};
+ //prepare response object
+ var jws = {
+     token: context.getVariable("jwt_jwt")
+ };
+ //if refresh token exists, add it to response
+ if (context.getVariable('grant_type') === "password") {
+     jws.refresh_token = context.getVariable("oauthv2accesstoken.AccessTokenRequest.refresh_token");
+ }
+ //send response
+ context.setVariable("request.header.Content-Type","application/json");
+ context.setVariable("request.header.Cache-Control","no-store");
+ context.setVariable("request.content", JSON.stringify(jws));
