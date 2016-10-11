@@ -34,6 +34,10 @@ However, this implementation uses KVM entries to store public-key and private-ke
 Contained within the 'microgateway' is one entry called 'publicKey' with the RSA public key and one entry called 'privateKey'
 with one entry called 'privateKey'
 
+### JWT implementation
+This project uses the JWT implementation from [here](https://github.com/apigee/iloveapis2015-jwt-jwe-jws). Many thanks to
+Dino Chiesa for providing the JWT implementation.
+
 ### Customizations
 
 #### How do I set custom expiry?
@@ -46,25 +50,17 @@ In the flow named 'Obtain Access Token' you'll find an Assign Message Policy cal
 ```
 
 #### How do I add or modify claims?
-In the file (under resources) open the file generate-jwt.js. Add/change the lines of code here:
+Set them as properties in the Java callout like this:
 ```
-//build jwt claims
-var token_payload = {
-   "access_token": context.getVariable("apigee.access_token"),
-   "application_name": context.getVariable("AccessEntity.ChildNodes.Access-App-Info.App.AppId"),//context.getVariable("apigee.developer.app.name"),
-   "client_id": context.getVariable("apigee.client_id"),
-   "scopes": productScopes,
-   "api_product_list": apiProductsList,
-   "iat": (new Date()).getTime(),
-   "exp": new Date( (new Date()).getTime() + expiry).getTime(),
-   "aud": ["microgateway"],
-   "iss": context.getVariable("proxyProto") + "://" + context.getVariable("proxyHost") + context.getVariable("proxy.basepath")+context.getVariable("proxy.pathsuffix"),
-   "jti": 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-               var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-               return v.toString(16);
-           })
-};
+<Property name="claim_access_token">{apigee.access_token}</Property>
+<Property name="claim_application_name">{AccessEntity.ChildNodes.Access-App-Info.App.AppId}</Property>
+<Property name="claim_client_id">{apigee.client_id}</Property>
+<Property name="claim_scopes">{oauthv2accesstoken.AccessTokenRequest.scope}</Property>
+<Property name="claim_jti">{jti}</Property>
+<Property name="claim_iss">{iss}</Property>
 ```
+
+For more information on how to set/manipulate claims please see [here](https://github.com/apigee/iloveapis2015-jwt-jwe-jws/tree/master/jwt_signed/callout)
 
 #### How can I get refresh tokens?
 The OAuth v2 policy supports password grant. If a request is sent as below:
