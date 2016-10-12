@@ -29,6 +29,8 @@
     apiProductsList.push(apiProduct.Name); 
  });
  
+ var scope = context.setVariable("scope",context.getVariable("oauthv2accesstoken.AccessTokenRequest.scope").split(" ") || []);
+ 
  context.setVariable("apiProductList", apiProductsList);
  context.setVariable("iss", context.getVariable("proxyProto") + "://" + context.getVariable("proxyHost") + context.getVariable("proxy.basepath")+context.getVariable("proxy.pathsuffix"));
  context.setVariable("jti", 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
