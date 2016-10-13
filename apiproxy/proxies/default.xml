@@ -19,7 +19,7 @@
                     <Name>Get-Public-Key</Name>
                 </Step>
                 <Step>
-                    <Name>Create-Response</Name>
+                    <Name>Send-Public-Key</Name>
                 </Step>
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/publicKey") and (request.verb = "GET")</Condition>

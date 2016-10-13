@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<AssignMessage async="false" continueOnError="false" enabled="true" name="Create-Response">
-    <DisplayName>Create Response</DisplayName>
-    <Set>
-        <Payload contentType="text/plain" variablePrefix="@" variableSuffix="#">@publicKey#</Payload>
-    </Set>
-    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-    <AssignTo createNew="true" transport="http" type="response"/>
-</AssignMessage>
