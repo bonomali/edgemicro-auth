@@ -2,9 +2,9 @@
 <KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Get-Private-Key" mapIdentifier="microgateway">
     <DisplayName>Get Private Key</DisplayName>
     <Properties/>
-    <Get assignTo="private-key" index="1">
+    <Get assignTo="privateKey" index="1">
         <Key>
-            <Parameter>privateKey</Parameter>
+            <Parameter>private-key</Parameter>
         </Key>
     </Get>
     <Scope>environment</Scope>
