@@ -24,6 +24,9 @@
         <Variable name="password" type="string">
             <JSONPath>$.password</JSONPath>
         </Variable>
+        <Variable name="scp" type="string">
+            <JSONPath>$.scope</JSONPath>
+        </Variable>
     </JSONPayload>
     <Source clearPayload="false">request</Source>
 </ExtractVariables>

@@ -8,6 +8,7 @@
             <FormParam name="grant_type">{grant_type}</FormParam>
             <FormParam name="username">{username}</FormParam>
             <FormParam name="password">{password}</FormParam>
+            <FormParam name="scope">{scp}</FormParam>
         </FormParams>
         <Path>/token</Path>
     </Set>
