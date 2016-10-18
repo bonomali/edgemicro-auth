@@ -24,10 +24,14 @@
  var apiProducts = JSON.parse(context.getVariable('apiProducts')).ApiProducts.ApiProduct || [];
 
  var apiProductsList = [];
- //get only the product name; status is not used/sent
- apiProducts.forEach(function(apiProduct){
-    apiProductsList.push(apiProduct.Name);
- });
+ try {
+     //get only the product name; status is not used/sent
+     apiProducts.forEach(function(apiProduct){
+        apiProductsList.push(apiProduct.Name);
+     });
+ }catch(err){
+     apiProductsList.push(apiProducts.Name);
+ }
 
  var scope = [];
  try {
@@ -35,7 +39,7 @@
  } catch (err) {
      scope = [];
  }
-  
+
  context.setVariable("apiProductList", apiProductsList);
  context.setVariable("iss", context.getVariable("proxyProto") + "://" + context.getVariable("proxyHost") + context.getVariable("proxy.basepath")+context.getVariable("proxy.pathsuffix"));
  context.setVariable("jti", 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
